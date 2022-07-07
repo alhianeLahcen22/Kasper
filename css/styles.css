@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
+/* Variables Starts */
+:root {
+  --primary-clr: #19c8fa;
+  --white-clr: #fff;
+}
+/* Variables Ends */
+
 /* Global Rules Starts */
 * {
   margin: 0;
@@ -15,6 +22,12 @@ html {
 }
 body {
   font-family: "Open Sans", sans-serif;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
 }
 /* Global Rules Ends */
 
@@ -42,3 +55,107 @@ body {
   }
 }
 /* Components Ends */
+
+/* Header Starts */
+.main-header {
+  position: absolute;
+  width: 100%;
+}
+.main-header .container {
+  position: relative;
+  min-height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-header .container::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 15px;
+  width: calc(100% - 30px);
+  height: 1px;
+  background-color: #726f71;
+}
+.main-header .logo img {
+  height: 45px;
+  -webkit-filter: contrast(0.4);
+  -moz-filter: contrast(0.4);
+  -o-filter: contrast(0.4);
+  -ms-filter: contrast(0.4);
+  filter: contrast(0.4);
+}
+.navigation {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.toggle-menu {
+  background-color: transparent;
+  border: none;
+  font-size: 22px;
+  color: var(--white-clr);
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .toggle-menu {
+    display: none;
+  }
+}
+.nav-links {
+  display: flex;
+}
+@media screen and (max-width: 767px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(0 0 0 / 50%);
+    flex-direction: column;
+    display: none;
+  }
+  .toggle-menu:hover + .nav-links {
+    display: flex;
+  }
+}
+.nav-links li a {
+  display: block;
+  padding: 30px 15px;
+  font-size: 15px;
+  color: var(--white-clr);
+  transition: 0.3s;
+}
+@media screen and (max-width: 767px) {
+  .nav-links li a {
+    padding: 15px;
+  }
+}
+.nav-links li a.active,
+.nav-links li a:hover {
+  border-bottom: 1px solid var(--primary-clr);
+  color: var(--primary-clr);
+}
+.search-form {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  margin-left: 15px;
+  border-left: 1px solid #726f71;
+  cursor: pointer;
+}
+.search-form i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 15px;
+  color: var(--white-clr);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* Header Ends */
