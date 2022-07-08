@@ -31,6 +31,14 @@ ul {
 a {
   text-decoration: none;
 }
+p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+}
+section {
+  padding: 80px 0;
+}
 /* Global Rules Ends */
 
 /* Components Starts */
@@ -55,6 +63,48 @@ a {
   .container {
     width: 1170px;
   }
+}
+.main-heading {
+  margin-bottom: 80px;
+  text-align: center;
+}
+.main-heading h2 {
+  position: relative;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+.main-heading h2::before,
+.main-heading h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.main-heading h2::before {
+  bottom: calc(-41px / 2);
+  width: 120px;
+  height: 1px;
+  background-color: #726f71;
+}
+.main-heading h2::after {
+  bottom: calc(-52px / 2);
+  width: 12px;
+  height: 12px;
+  background-color: var(--white-clr);
+  border: 1px solid #726f71;
+  border-radius: 50%;
+}
+.main-heading p {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 /* Components Ends */
 
@@ -206,10 +256,6 @@ a {
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 10px;
-}
-.landing-text .text-content p {
-  font-size: 14px;
-  line-height: 1.7;
 }
 .change-bg {
   position: absolute;
