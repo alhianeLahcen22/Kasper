@@ -3,6 +3,7 @@
 /* Variables Starts */
 :root {
   --primary-clr: #19c8fa;
+  --transparent-clr: rgb(0 102 153 / 70%);
   --white-clr: #fff;
 }
 /* Variables Ends */
@@ -21,6 +22,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  font-weight: 400;
   font-family: "Open Sans", sans-serif;
 }
 ul {
@@ -59,6 +61,7 @@ a {
 /* Header Starts */
 .main-header {
   position: absolute;
+  z-index: 2;
   width: 100%;
 }
 .main-header .container {
@@ -159,3 +162,97 @@ a {
   transform: translate(-50%, -50%);
 }
 /* Header Ends */
+
+/* Landing Starts */
+.landing {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+    url(../imgs/landing.jpg) center center no-repeat;
+  background-size: cover;
+}
+.landing-text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 50px;
+  background-color: var(--transparent-clr);
+  color: var(--white-clr);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media screen and (max-width: 767px) {
+  .landing-text {
+    width: 100%;
+    padding: 30px;
+  }
+}
+.landing-text .text-content {
+  max-width: 500px;
+}
+@media screen and (max-width: 767px) {
+  .landing-text .text-content {
+    max-width: 100%;
+  }
+}
+.landing-text .text-content h2 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.landing-text .text-content p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.change-bg {
+  position: absolute;
+  top: 50%;
+  color: var(--white-clr);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media screen and (max-width: 767px) {
+  .change-bg {
+    display: none;
+  }
+}
+.change-bg:first-of-type {
+  left: 20px;
+}
+.change-bg:last-of-type {
+  right: 20px;
+}
+.bullets {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.bullets li {
+  display: inline-block;
+  margin: 0 5px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--white-clr);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.bullets li.active {
+  background-color: var(--primary-clr);
+  border-color: var(--primary-clr);
+}
+/* Landing Ends */
