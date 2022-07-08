@@ -22,6 +22,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  height: 10000px;
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
 }
@@ -334,3 +335,52 @@ section {
   color: var(--primary-clr);
 }
 /* Services Ends */
+
+/* Design Section Starts */
+.design {
+  overflow: hidden;
+  background: linear-gradient(to right, rgb(0 0 0 / 40%), rgb(0 0 0 / 40%)),
+    url(../imgs/design.jpg) center center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+.design-img,
+.design-text {
+  flex: 1;
+}
+.design-img {
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .design-img {
+    display: none;
+  }
+}
+.design-img img {
+  position: relative;
+  bottom: -135px;
+  max-width: 300px;
+}
+.design-text {
+  padding: 50px;
+  background-color: var(--transparent-clr);
+  color: var(--white-clr);
+}
+.design-text h3 {
+  margin-bottom: 30px;
+  font-weight: normal;
+  font-size: 18px;
+}
+.design-text ul li {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.design-text ul li:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+.design-text ul li img {
+  margin-right: 15px;
+}
+/* Design Section Ends */
