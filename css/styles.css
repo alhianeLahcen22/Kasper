@@ -132,12 +132,7 @@ section {
   background-color: #726f71;
 }
 .main-header .logo img {
-  height: 45px;
-  -webkit-filter: contrast(0.4);
-  -moz-filter: contrast(0.4);
-  -o-filter: contrast(0.4);
-  -ms-filter: contrast(0.4);
-  filter: contrast(0.4);
+  height: 35px;
 }
 .navigation {
   flex: 1;
